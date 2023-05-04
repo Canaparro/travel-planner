@@ -24,8 +24,13 @@ hs_err_pid*
 replay_pid*
 
 # intellij
-.idea
+.idea/
 
 # maven
 .mvn
 mvnw*
+HELP.md
+
+# webpack
+dist/
+node_modules

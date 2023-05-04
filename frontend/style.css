@@ -1,1 +1,5 @@
 #map { height: 800px; }
+
+#temperature-chart {
+    width: 800px;
+}

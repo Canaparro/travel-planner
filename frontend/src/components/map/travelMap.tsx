@@ -1,20 +1,15 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
+import LocationMarker from './locationMarker'
 import styles from '@/styles/Home.module.css'
+import { ScriptProps } from 'next/script'
 
-function travelMap() {
+export default function travelMap({setCurrentPosition}) {
     return (
-        <MapContainer className={styles.map} center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[51.505, -0.09]}>
-                <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-            </Marker>
+        <MapContainer className={styles.map} center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+            // TODO: replace with open street map
+            <TileLayer url='http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
+                subdomains={['mt0', 'mt1', 'mt2', 'mt3']} />
+            <LocationMarker setCurrentPosition={setCurrentPosition}/>
         </MapContainer>
     )
 }
-
-export default travelMap

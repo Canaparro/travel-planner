@@ -1,9 +1,9 @@
-// import {DateTime} from 'luxon'
+// import { DateTime } from 'luxon'
 // import Chart from 'chart.js/auto'
 
-// export default function createChart() {
+// export default function createChart(this: XMLHttpRequest) {
 //     let jsonResponse = JSON.parse(this.response);
-//     let hours = jsonResponse.hourly.time.map(date => DateTime.fromISO(date).toFormat("HH'h' dd-MMM"));
+//     let hours = jsonResponse.hourly.time.map((date: string) => DateTime.fromISO(date).toFormat("HH'h' dd-MMM"));
 //     new Chart("weather", {
 //         type: "line",
 //         data: {

@@ -2,9 +2,9 @@ import CurrentPosition from '../currentPosition';
 import { Line } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { LinearScale, CategoryScale, PointElement, LineElement, Chart as Chartjs, ChartData } from "chart.js";
+import { LinearScale, CategoryScale, PointElement, LineElement, Filler, Chart as Chartjs, ChartData } from "chart.js";
 
-Chartjs.register(CategoryScale, LinearScale, PointElement, LineElement);
+Chartjs.register(CategoryScale, LinearScale, PointElement, LineElement, Filler);
 
 export default function Chart({currentPosition}: {currentPosition: CurrentPosition | null}) {
     const [temperature, setTemperature] = useState<ChartData<"line"> | null>(null);

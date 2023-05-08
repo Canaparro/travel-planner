@@ -27,6 +27,8 @@ export default function Home() {
         unCheckedChildren={<LineChartOutlined />}
       />
       <Drawer placement={'bottom'} 
+        mask={false}
+        maskClosable={false}
         onClose={closeChart}
         open={isChartOpen && isTemperatureSwitchOn}
         destroyOnClose={true}>
